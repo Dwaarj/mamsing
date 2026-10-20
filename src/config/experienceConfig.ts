@@ -50,8 +50,15 @@ export const experienceConfig: ExperienceConfig = {
     {
       id: "vellingeblomman", enabled: true, order: 1, eyebrow: "Första överraskningen",
       title: "Första överraskningen", teaser: "Nu börjar dagen på riktigt. Vi ska ge oss iväg till en plats där du får fria händer att hitta något som du verkligen tycker om.",
-      images: [{ src: "/images/vellingeblomman.jpg", alt: "Vellingeblomman", caption: "[BILDTEXT]" }],// lägg till fler bilder genom fler rader
-      challenge: {
+      images: [
+  {
+    src: "/images/vellingeblomman.jpg",
+    alt: "Vellingeblomman",
+    caption: "[BILDTEXT]"
+  }
+],
+
+challenge: {
         type: "text", prompt: "Vilket utflyktsmål förknippar vi med blommor, inredning, inspiration och shopping?",
         acceptedAnswers: ["hej", "Vellinge Blomman", "Vellinge blomman"], ignoreCase: true, ignoreWhitespace: true,
         hint: "Platsen ligger i Vellinge och namnet avslöjar att där finns gott om växtlighet.",
