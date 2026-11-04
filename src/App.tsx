@@ -47,7 +47,15 @@ export default function App() {
   else body = (
     <StepScreen key={step.id} step={step} config={config} solved={p.solved.includes(step.id)} hintShown={p.hints.includes(step.id)} isLast={viewIdx === steps.length - 1}
       onHint={() => update((s) => ({ ...s, hints: [...s.hints, step.id] }))}
-      onSolved={() => update((s) => ({ ...s, solved: s.solved.includes(step.id) ? s.solved : [...s.solved, step.id] }))}
+      onSolved={() => update((s) => ({
+
+ ...s,
+
+ solved: s.solved.includes(step.id) ? s.solved : [...s.solved, step.id],
+
+ viewId: step.id
+
+}))}
       onPlayed={() => update((s) => ({ ...s, played: s.played.includes(step.id) ? s.played : [...s.played, step.id] }))}
       onNext={() => (viewIdx === steps.length - 1 ? update((s) => ({ ...s, finished: true })) : go(viewIdx + 1))} />
   );

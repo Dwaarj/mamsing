@@ -48,27 +48,25 @@ export const experienceConfig: ExperienceConfig = {
 
   steps: [
     {
-      id: "vellingeblomman", enabled: true, order: 1, eyebrow: "Första överraskningen",
+      id: "Illum Bolighus", enabled: true, order: 1, eyebrow: "Första överraskningen",
       title: "Första överraskningen", teaser: "Nu börjar dagen på riktigt. Vi ska ge oss iväg till en plats där du får fria händer att hitta något som du verkligen tycker om.",
       images: [
   {
-    src: "/images/vellingeblomman.jpg",
-    alt: "Vellingeblomman",
+    src: "/images/1.jpg",
+    alt: "Illum Bolighus",
     caption: "[BILDTEXT]"
   }
 ],
 
 challenge: {
-        type: "text", prompt: "Vilket utflyktsmål förknippar vi med blommor, inredning, inspiration och shopping?",
-        acceptedAnswers: ["hej", "Vellinge Blomman", "Vellinge blomman"], ignoreCase: true, ignoreWhitespace: true,
-        hint: "Platsen ligger i Vellinge och namnet avslöjar att där finns gott om växtlighet.",
+        type: "text", prompt: "Dagens första destination har sina rötter i vårt grannland och är fylld med sådant som kan få ett hem att kännas lite extra fint. Namnet handlar egentligen om ljus, men vi ska inte dit för att köpa lampor. Vart är vi på väg?",
+        acceptedAnswers: ["Illum Bolighus", "Illum", "Illums bolighus", "illumbolighus"], ignoreCase: true, ignoreWhitespace: true,
+        hint: "Tänk dansk design och inredning. Första delen av namnet för tankarna till något som lyser.",
         successMessage: "Precis rätt, mamma! 🎉",
       },
-      reveal: { title: "Vi åker till Vellingeblomman!", description: "Där får du shoppa precis vad du vill för 1 000 kronor.", budget: "Din shoppingbudget: 1 000 kr", destination: "Vellingeblomman" },
+      reveal: { title: "Vi åker till Illum Bolighus", description: "Där får du shoppa precis vad du vill för 1 000 kronor.", budget: "Din shoppingbudget: 1 000 kr", destination: "Vellingeblomman" },
       didYouKnow: { enabled: true, heading: "Visste du att…", text: "Visste du att vi fortfarande pratar om gången då du [LÄGG IN PERSONLIGT MINNE HÄR]?", image: "/images/1.jpg" },
-      audioGreeting: { enabled: true, src: "/audio/jesper-halsning.mp3", title: "En hälsning inför shoppingen", from: "[NAMN]", autoplayAfterReveal: false },
-      // Flera hälsningar på samma steg: använd audioGreetings (lista)
-      audioGreetings: [{ enabled: true, src: "/audio/familjen-halsning.mp3", title: "Hälsning från hela gänget", from: "Familjen" }],
+       
     },
     {
       id: "lunch", enabled: true, order: 2, eyebrow: "Nästa stopp",
@@ -77,61 +75,54 @@ challenge: {
       challenge: {
         type: "multipleChoice", prompt: "Vilken maträtt brukade du laga som vi barn fortfarande förknippar särskilt mycket med dig?", shuffleOptions: true,
         options: [ // ← markera RÄTT alternativ med isCorrect: true
-          { id: "a", label: "hej", isCorrect: true },
-          { id: "b", label: "[FEL ALTERNATIV 1]" }, { id: "c", label: "[FEL ALTERNATIV 2]" }, { id: "d", label: "[FEL ALTERNATIV 3]" },
+          { id: "a", label: "Fläskfilé med italienskt täcke", isCorrect: true },
+          { id: "b", label: "Pasta Carbonara" }, { id: "c", label: "Bakad potatis" }, { id: "d", label: "Kallops" },
         ],
         successMessage: "Ja just det – det minns vi så väl! ❤️",
       },
-      reveal: { title: "Nu väntar en riktigt fin lunch!", description: "Vi åker vidare till [RESTAURANGENS NAMN] för en sen lunch tillsammans.", destination: "[RESTAURANGENS NAMN], [ADRESS ELLER OMRÅDE]", time: "[BOKAD TID]", practicalInformation: ["[PRAKTISK INFORMATION]"] },
-      didYouKnow: { enabled: true, text: "Ett av våra finaste minnen med dig är [LÄGG IN MINNE HÄR].", image: "/images/2.jpg" },
-      audioGreeting: { enabled: true, src: "/audio/familjen-halsning.mp3", title: "En hälsning vid lunchen", from: "[NAMN]" },
+      reveal: { title: "Nu väntar en riktigt fin lunch!", description: "Vi åker vidare till Maderiet för en sen lunch tillsammans.", destination: "Maderiet, Bokskogens GK", time: "13:00" },
+      didYouKnow: { enabled: true, text: "Våra finaste minnen med dig är dina helt underbara Julbruncher", image: "/images/2.jpg" },
     },
     {
       id: "vila", enabled: true, order: 3, eyebrow: "Lugn före stormen",
       title: "Lugn före stormen", teaser: "Efter dagens första äventyr väntar en liten paus. Du kommer att behöva samla energi, för dagen är långt ifrån slut.",
-      images: [{ src: "/images/vila.jpg", alt: "Vila och avkoppling" }],
+      images: [{ src: "/images/4.jpg", alt: "Vila och avkoppling" }],
       challenge: {
-        type: "text", prompt: "På vilken plats semestrade vi när [LÄGG IN PERSONLIG HÄNDELSE]?", acceptedAnswers: ["hej", "[ALTERNATIV STAVNING]"],
-        hint: "[LÄGG IN EN PERSONLIG LEDTRÅD]", successMessage: "Helt rätt! Vilket minne. ❤️",
+        type: "text", prompt: "På vilken plats semestrade vi när Jesper bajsade på sig?", acceptedAnswers: ["Liseberg", "liseberg"],
+        hint: "En årlig tradition när vi var små", successMessage: "Helt rätt! Vilket minne. ❤️",
       },
       reveal: { title: "Dags för en välförtjänt paus", description: "Nu åker du hem och vilar en stund. Ta det lugnt, byt om och gör dig redo. Kvällen har bara börjat." },
-      didYouKnow: { enabled: true, text: "Visste du att [LÄGG IN MINNE HÄR]?" },
-      audioGreeting: { enabled: true, src: "/audio/vila-halsning.mp3", title: "Vilohälsning", from: "[NAMN]" },
     },
     {
-      id: "depeche-mode", enabled: true, order: 4, variant: "dark", eyebrow: "Kvällens huvudnummer",
+      id: "depeche-mode", enabled: true, order: 4, eyebrow: "Kvällens huvudnummer",
       title: "Kvällens huvudnummer", teaser: "Nu kombinerar vi musik, nostalgi och något gott i glaset. En av dina favoriter står i centrum.",
-      images: [{ src: "/images/depeche-mode.jpg", alt: "Konsert eller familjefoto" }],
+      images: [{ src: "/images/tarta.jpg", alt: "Konsert eller familjefoto" }],
       challenge: {
-        type: "number", prompt: "Vilket år bildades Depeche Mode?", acceptedAnswers: ["hej"],
+        type: "number", prompt: "Vilket år bildades Depeche Mode?", acceptedAnswers: ["1980"],
         hint: "Det var i början av ett årtionde som kom att präglas av synthar, stora frisyrer och ikonisk musik.", successMessage: "Rätt! Du är en riktig kännare. 🎶",
       },
       reveal: { title: "Ikväll blir det Depeche Mode-fest!", description: "Det väntar Depeche Mode, bubbel, tilltugg och en kväll i musikens tecken." },
       didYouKnow: { enabled: true, text: "[LÄGG IN ETT DEPECHE MODE-RELATERAT MINNE]" },
-      audioGreeting: { enabled: true, src: "/audio/depeche-halsning.mp3", title: "Inför festen", from: "[NAMN]" },
     },
     {
       id: "middag", enabled: true, order: 5, eyebrow: "Kvällen fortsätter",
       title: "Kvällen fortsätter", teaser: "Musiken och bubblet var bara början. Nu väntar något som samlar dem som betyder allra mest.",
       images: [{ src: "/images/middag.jpg", alt: "Familjemiddag" }],
       challenge: {
-        type: "riddle", prompt: "[LÄGG IN EN PERSONLIG GÅTA SOM LEDER TILL BARNET ELLER PLATSEN]", acceptedAnswers: ["hej", "[ALTERNATIVT SVAR]"],
+        type: "riddle", prompt: "Vilket telefonnummer hade vi innan 447677?", acceptedAnswers: ["446414", "hej"],
         hint: "[LÄGG IN LEDTRÅD]", successMessage: "Du listade ut det! ❤️",
       },
       reveal: {
-        title: "Nu blir det middag med familjen", description: "Vi fortsätter kvällen hemma hos [NAMN], där det väntar middag och mer tid tillsammans.",
-        destination: "Värd: [NAMN] · [ADRESS]", time: "Ungefär [TID]", practicalInformation: ["Klädkod: [KLÄDKOD]", "[PRAKTISK INFORMATION]"],
+        title: "Nu blir det middag med familjen", description: "Vi fortsätter kvällen med oxfilé och bearneise!",
       },
-      didYouKnow: { enabled: true, text: "Visste du att [LÄGG IN MINNE HÄR]?" },
-      audioGreeting: { enabled: true, src: "/audio/middag-halsning.mp3", title: "En hälsning före middagen", from: "[NAMN]" },
     },
     {
       id: "tarta", enabled: true, order: 6, eyebrow: "Ett sista mysterium",
-      title: "Ett sista mysterium", teaser: "Det återstår fortfarande en viktig födelsedagstradition. Eller kanske två.",
+      title: "Ett sista mysterium", teaser: "Det återstår fortfarande en viktig födelsedagstradition.",
       images: [{ src: "/images/tarta.jpg", alt: "Tårta och presenter" }],
       challenge: {
-        type: "multipleChoice", prompt: "Vad hoppas vi att du känner extra mycket i dag?", shuffleOptions: true,
-        options: [{ id: "a", label: "hej", isCorrect: true }, { id: "b", label: "Stressad" }, { id: "c", label: "Uttråkad" }, { id: "d", label: "Bortglömd" }],
+        type: "multipleChoice", prompt: "Shopping, lunch, vila, bubbel, Depeche Mode och middag. Vad saknas för att dagen officiellt ska kunna kallas ett 60-årsfirande?", shuffleOptions: true,
+        options: [{ id: "a", label: "Tårta och presenter", isCorrect: true }, { id: "b", label: "En tupplur till" }, { id: "c", label: "Fyrverkerier" }, { id: "d", label: "Disk och städning" }],
         successMessage: "Ja, mamma. Du är så älskad. ❤️",
       },
       reveal: { title: "Tårta och presentöppning!", description: "Nu avslutar vi dagen med tårta, presenter och ännu mer firande tillsammans." },
@@ -141,7 +132,7 @@ challenge: {
   ],
 
   familyGreetings: [
-    { id: "jesper", author: "Jesper", message: "Grattis mamma! Vi älskar dig och hoppas att du får en fantastisk dag.", image: "/images/greetings/jesper.jpg", audioSrc: "/audio/jesper-halsning.mp3" },
+    { id: "jesper", author: "Jesper", message: "Grattis mamma! Vi älskar dig och hoppas att du har haft en fantastisk dag.", image: "/images/greetings/jesper.jpg", audioSrc: "/audio/jesper-halsning.mp3" },
   ],
   gallery: { enabled: true, images: [
     { src: "/images/gallery/1.jpg", alt: "Familjebild 1", caption: "[BILDTEXT]" },
