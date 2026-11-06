@@ -23,7 +23,7 @@ export const experienceConfig: ExperienceConfig = {
     continue: "Fortsätt", check: "Kontrollera svaret", hint: "Ledtråd", showHint: "Behöver du en liten ledtråd?", retry: "Börja om",
     restart: "Starta om dagen", restartConfirm: "Är du säker? Alla upplåsta överraskningar återställs.", cancel: "Avbryt", confirmRestart: "Ja, starta om",
     secret: "Hemlig överraskning", overview: "Dagens överraskningar", gallery: "Minnesgalleri", finaleButton: "Till finalen",
-    didYouKnow: "Visste du att…", answerPlaceholder: "Skriv ditt svar här", emptyAnswer: "Skriv ett svar först så provar vi tillsammans.", revealing: "Dagens nästa överraskning avslöjas…",
+    didYouKnow: "Kommer du ihåg när...", answerPlaceholder: "Skriv ditt svar här", emptyAnswer: "Skriv ett svar först så provar vi tillsammans.", revealing: "Dagens nästa överraskning avslöjas…",
   },
   meta: { pageTitle: "Födelsedagsäventyret", storageKey: "bday-progress-v1" },
   ui: {
@@ -64,9 +64,7 @@ challenge: {
         hint: "Tänk dansk design och inredning. Första delen av namnet för tankarna till något som lyser.",
         successMessage: "Precis rätt, mamma! 🎉",
       },
-      reveal: { title: "Vi åker till Illum Bolighus", description: "Där får du shoppa precis vad du vill för 1 000 kronor.", budget: "Din shoppingbudget: 1 000 kr", destination: "Vellingeblomman" },
-      didYouKnow: { enabled: true, heading: "Visste du att…", text: "Visste du att vi fortfarande pratar om gången då du [LÄGG IN PERSONLIGT MINNE HÄR]?", image: "/images/1.jpg" },
-       
+      reveal: { title: "Vi åker till Illum Bolighus", description: "Där får du shoppa precis vad du vill för 5000 kronor. Sponsorer: Pappa, Carina & Ann-Charlotte", budget: "Din shoppingbudget: 5 000 kr"},   
     },
     {
       id: "lunch", enabled: true, order: 2, eyebrow: "Nästa stopp",
@@ -102,7 +100,7 @@ challenge: {
         hint: "Det var i början av ett årtionde som kom att präglas av synthar, stora frisyrer och ikonisk musik.", successMessage: "Rätt! Du är en riktig kännare. 🎶",
       },
       reveal: { title: "Ikväll blir det Depeche Mode-fest!", description: "Det väntar Depeche Mode, bubbel, tilltugg och en kväll i musikens tecken." },
-      didYouKnow: { enabled: true, text: "[LÄGG IN ETT DEPECHE MODE-RELATERAT MINNE]" },
+      didYouKnow: { enabled: true, text: "Vi åkte limousine och träffade Depeche Mode backstage?" },
     },
     {
       id: "middag", enabled: true, order: 5, eyebrow: "Kvällen fortsätter",
@@ -113,37 +111,34 @@ challenge: {
         hint: "[LÄGG IN LEDTRÅD]", successMessage: "Du listade ut det! ❤️",
       },
       reveal: {
-        title: "Nu blir det middag med familjen", description: "Vi fortsätter kvällen med oxfilé och bearneise!",
+        title: "Nu blir det middag med familjen", description: "Vi fortsätter kvällen med oxfilé och bearneise! Sponsor och kock: Jesper",
       },
     },
     {
       id: "tarta", enabled: true, order: 6, eyebrow: "Ett sista mysterium",
       title: "Ett sista mysterium", teaser: "Det återstår fortfarande en viktig födelsedagstradition.",
-      images: [{ src: "/images/tarta.jpg", alt: "Tårta och presenter" }],
+      images: [{ src: "/images/depeche-mode.jpg", alt: "Tårta och presenter" }],
       challenge: {
         type: "multipleChoice", prompt: "Shopping, lunch, vila, bubbel, Depeche Mode och middag. Vad saknas för att dagen officiellt ska kunna kallas ett 60-årsfirande?", shuffleOptions: true,
         options: [{ id: "a", label: "Tårta och presenter", isCorrect: true }, { id: "b", label: "En tupplur till" }, { id: "c", label: "Fyrverkerier" }, { id: "d", label: "Disk och städning" }],
         successMessage: "Ja, mamma. Du är så älskad. ❤️",
       },
       reveal: { title: "Tårta och presentöppning!", description: "Nu avslutar vi dagen med tårta, presenter och ännu mer firande tillsammans." },
-      didYouKnow: { enabled: false, text: "" },
-      audioGreeting: { enabled: false, src: "", title: "" },
+      didYouKnow: { enabled: false, text: ""}
     },
   ],
 
   familyGreetings: [
-    { id: "jesper", author: "Jesper", message: "Grattis mamma! Vi älskar dig och hoppas att du har haft en fantastisk dag.", image: "/images/greetings/jesper.jpg", audioSrc: "/audio/jesper-halsning.mp3" },
+    { id: "jesper", message: "Grattis mamma! Vi älskar dig mer än vad vi kan beskriva i ord här och hoppas att du har haft en fantastisk dag.", image: "/images/3.jpg"},
   ],
   gallery: { enabled: true, images: [
-    { src: "/images/gallery/1.jpg", alt: "Familjebild 1", caption: "[BILDTEXT]" },
-    { src: "/images/gallery/2.jpg", alt: "Familjebild 2" },
-    { src: "/images/gallery/3.jpg", alt: "Familjebild 3" },
+    { src: "/images/5.jpg", alt: "Familjebild 1", caption: "[BILDTEXT]" },
+    { src: "/images/7.jpg", alt: "Familjebild 2" },
+    { src: "/images/vila.jpg", alt: "Familjebild 3" },
   ] },
   finale: {
     title: "Grattis på 60-årsdagen, mamma!",
     message: "Den här dagen handlar om dig och om allt du betyder för oss. Tack för alla minnen, all kärlek och allt du gör. Vi hoppas att den här dagen blir ett nytt minne som vi får bära med oss tillsammans.",
-    closing: "Vi älskar dig ❤️", image: "/images/family.jpg",
-    collage: [{ src: "/images/gallery/1.jpg", alt: "Collage 1" }, { src: "/images/gallery/2.jpg", alt: "Collage 2" }],
-    audio: { enabled: true, src: "/audio/sista-overraskningen.mp3", title: "En gemensam hälsning från oss alla", from: "Hela familjen" },
+    closing: "Vi älskar dig ❤️", image: "/images/familj.jpg"
   },
 };
