@@ -64,7 +64,7 @@ challenge: {
         hint: "Tänk dansk design och inredning. Första delen av namnet för tankarna till något som lyser.",
         successMessage: "Precis rätt, mamma! 🎉",
       },
-      reveal: { title: "Vi åker till Illum Bolighus", description: "Där får du shoppa precis vad du vill för 5000 kronor. Sponsorer: Pappa, Carina & Ann-Charlotte", budget: "Din shoppingbudget: 5 000 kr"},   
+      reveal: { title: "Vi åker till Illum Bolighus", description: "Där får du shoppa precis vad du vill för 5000 kronor. Sponsorer: Pappa, Josefin, Carina & Ann-Charlotte", budget: "Din shoppingbudget: 5 000 kr"},   
     },
     {
       id: "lunch", enabled: true, order: 2, eyebrow: "Nästa stopp",
@@ -123,14 +123,14 @@ challenge: {
         options: [{ id: "a", label: "Tårta och presenter", isCorrect: true }, { id: "b", label: "En tupplur till" }, { id: "c", label: "Fyrverkerier" }, { id: "d", label: "Disk och städning" }],
         successMessage: "Ja, mamma. Du är så älskad. ❤️",
       },
-      reveal: { title: "Tårta och presentöppning!", description: "Nu avslutar vi dagen med tårta, presenter och ännu mer firande tillsammans." },
+      reveal: { title: "Tårta och presentöppning!", description: "Nu avslutar vi dagen med tårta, presenter och ännu mer firande tillsammans. Kock: Carina" },
       didYouKnow: { enabled: false, text: ""}
     },
   ],
 
   familyGreetings: [
     { id: "jesper", message: "Grattis mamma! Vi älskar dig mer än vad vi kan beskriva i ord här och hoppas att du har haft en fantastisk dag.", image: "/images/3.jpg"},
-  ],
+  { id: "jesper", message: "Stort grattis på 60-årsdagen, älskade mamma ❤️. Tack för att du alltid finns där, alltid ställer upp och ger så mycket kärlek. Vi är så lyckligt lottade som har dig - världens bästa mamma och mormor. Vi älskar dig massor och hoppas att du får en alldeles fantastisk dag ❤️", image: "/images/depeche-mode.jpg"}],
   gallery: { enabled: true, images: [
     { src: "/images/5.jpg", alt: "Familjebild 1", caption: "[BILDTEXT]" },
     { src: "/images/7.jpg", alt: "Familjebild 2" },
